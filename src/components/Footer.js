@@ -10,13 +10,13 @@ const Footer = () => {
             <h3>Bhigwan Bird Sanctuary</h3>
             <p>Experience the wonder of nature with expert guides and authentic village hospitality.</p>
             <div className="social-links">
-              <a href="https://wa.me/919075013542" target="_blank" rel="noopener noreferrer" title="WhatsApp">
+              <a href="https://www.instagram.com/bhigwan_birdsanctuary/?utm_source=qr&r=nametag" target="_blank" rel="noopener noreferrer" title="WhatsApp">
                 <i className="fab fa-whatsapp"></i>
               </a>
-              <a href="#" title="Facebook">
+              <a href="https://www.instagram.com/bhigwan_birdsanctuary/?utm_source=qr&r=nametag" title="Facebook">
                 <i className="fab fa-facebook"></i>
               </a>
-              <a href="#" title="Instagram">
+              <a href="https://www.instagram.com/bhigwan_birdsanctuary/?utm_source=qr&r=nametag" title="Instagram">
                 <i className="fab fa-instagram"></i>
               </a>
             </div>

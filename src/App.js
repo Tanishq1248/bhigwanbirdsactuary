@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import './index.css';
 import { AdminProvider, useAdmin } from './context/AdminContext';
-import Navbar from './components/Navbar';
+// import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Gallery from './components/Gallery';
 import Packages from './components/Packages';
