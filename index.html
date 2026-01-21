@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhigwan Bird Sanctuary - Bird Watching Experience</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-feather"></i> Bhigwan Birds
+            </div>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#packages">Packages</a></li>
+                <li><a href="#booking">Book Now</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Experience the Magic of Bhigwan</h1>
+                <p>Discover the enchanting world of migratory birds at Maharashtra's premier bird sanctuary</p>
+                <a href="#booking" class="cta-button">Book Your Adventure</a>
+            </div>
+            <div class="hero-media">
+                <!-- Video Placeholder - User will replace with their video -->
+                <video id="heroVideo" class="hero-video" autoplay muted loop playsinline>
+                    <source src="your-video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-overlay"></div>
+                <!-- Fallback image -->
+                <div class="hero-image-placeholder">
+                    <i class="fas fa-image"></i>
+                    <p>Add your video here</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section id="packages" class="packages">
+        <div class="container">
+            <h2>Choose Your Experience</h2>
+            <p class="section-subtitle">Select the perfect package for your Bhigwan adventure</p>
+            
+            <div class="packages-grid">
+                <!-- Basic Package -->
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>Basic Package</h3>
+                        <p class="package-description">Perfect for a day trip</p>
+                    </div>
+                    <div class="package-price">₹1500 <span>per person</span></div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> One day bird watching tour</li>
+                        <li><i class="fas fa-check"></i> Expert naturalist guide</li>
+                        <li><i class="fas fa-check"></i> Sunrise boat safari</li>
+                        <li><i class="fas fa-check"></i> Village flavors (breakfast)</li>
+                        <li><i class="fas fa-check"></i> Bird watching equipment</li>
+                        <li class="unavailable"><i class="fas fa-times"></i> Night jungle safari</li>
+                        <li class="unavailable"><i class="fas fa-times"></i> Comfortable stay</li>
+                    </ul>
+                    <button class="book-btn" onclick="selectPackage('Basic Package', 1500)">Book Basic Package</button>
+                </div>
+
+                <!-- Premium Package -->
+                <div class="package-card featured">
+                    <div class="recommended-badge">Recommended</div>
+                    <div class="package-header">
+                        <h3>Premium Package</h3>
+                        <p class="package-description">Complete immersive experience</p>
+                    </div>
+                    <div class="package-price">₹2200 <span>per person</span></div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> One day bird watching tour</li>
+                        <li><i class="fas fa-check"></i> Expert naturalist guide</li>
+                        <li><i class="fas fa-check"></i> Sunrise boat safari</li>
+                        <li><i class="fas fa-check"></i> Village flavors (all meals)</li>
+                        <li><i class="fas fa-check"></i> Bird watching equipment</li>
+                        <li><i class="fas fa-check"></i> One night comfortable stay</li>
+                        <li><i class="fas fa-check"></i> Night jungle safari experience</li>
+                    </ul>
+                    <button class="book-btn featured-btn" onclick="selectPackage('Premium Package', 2200)">Book Premium Package</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form Section -->
+    <section id="booking" class="booking">
+        <div class="container">
+            <div class="booking-container">
+                <div class="booking-form-wrapper">
+                    <h2>Book Your Visit</h2>
+                    <p>Reserve your spot at Bhigwan Bird Sanctuary. We'll confirm your booking shortly.</p>
+                    
+                    <form id="bookingForm" class="booking-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fullName">Full Name *</label>
+                                <input type="text" id="fullName" name="fullName" placeholder="Enter your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" placeholder="10-digit mobile number" required pattern="[0-9]{10}">
+                            </div>
+                            <div class="form-group">
+                                <label for="visitDate">Visit Date *</label>
+                                <input type="date" id="visitDate" name="visitDate" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="numPeople">Number of People *</label>
+                                <input type="number" id="numPeople" name="numPeople" placeholder="Enter number of guests" min="1" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="package">Select Package *</label>
+                                <select id="package" name="package" required>
+                                    <option value="">Choose a package</option>
+                                    <option value="Basic Package - ₹1500">Basic Package - ₹1500</option>
+                                    <option value="Premium Package - ₹2200">Premium Package - ₹2200</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="message">Special Requests (Optional)</label>
+                            <textarea id="message" name="message" placeholder="Any special requests or queries?" rows="4"></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Complete Booking</button>
+                        <p class="form-note">We'll contact you via WhatsApp to confirm your booking</p>
+                    </form>
+                </div>
+
+                <div class="booking-info">
+                    <h3>Why Book With Us?</h3>
+                    <div class="info-item">
+                        <i class="fas fa-star"></i>
+                        <div>
+                            <h4>Expert Guides</h4>
+                            <p>Experienced naturalists with deep knowledge of bird species</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-heart"></i>
+                        <div>
+                            <h4>Authentic Experience</h4>
+                            <p>Immerse yourself in nature at Maharashtra's top sanctuary</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-camera"></i>
+                        <div>
+                            <h4>Photography Ready</h4>
+                            <p>Perfect spots for bird photography and nature lovers</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-utensils"></i>
+                        <div>
+                            <h4>Local Cuisine</h4>
+                            <p>Enjoy authentic village flavors and local delicacies</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>Visitor Testimonials</h2>
+            <p class="section-subtitle">What travelers from Maharashtra say about their experience</p>
+            
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"An absolutely magical experience! The guides were incredibly knowledgeable and we spotted over 40 different bird species. The sunrise boat safari was unforgettable!"</p>
+                    <div class="testimonial-author">
+                        <h4>Rajesh Sharma</h4>
+                        <p>Pune, Maharashtra</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"The premium package was totally worth it. The village food was delicious, and the night jungle safari was thrilling. Our kids loved learning about different bird species!"</p>
+                    <div class="testimonial-author">
+                        <h4>Priya Deshmukh</h4>
+                        <p>Mumbai, Maharashtra</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Best birding destination in India! The equipment provided was top-notch, and our guide Vitthal was phenomenal. We're already planning our next visit!"</p>
+                    <div class="testimonial-author">
+                        <h4>Aditya Kulkarni</h4>
+                        <p>Aurangabad, Maharashtra</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Perfect getaway from city life! The accommodation was clean and comfortable, and the food authentic. Saw the rare Indian skimmer here. Highly recommended!"</p>
+                    <div class="testimonial-author">
+                        <h4>Neha Joshi</h4>
+                        <p>Nashik, Maharashtra</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 5 -->
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"The booking process was smooth and the team was very responsive on WhatsApp. Amazing sunrise views and excellent photography opportunities. Worth every penny!"</p>
+                    <div class="testimonial-author">
+                        <h4>Vikram Gawande</h4>
+                        <p>Indore, Madhya Pradesh</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 6 -->
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"A unique blend of adventure and learning. The night safari was the highlight - such an immersive experience! The guides are truly passionate about conservation."</p>
+                    <div class="testimonial-author">
+                        <h4>Sneha Iyer</h4>
+                        <p>Thane, Maharashtra</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 7 -->
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Outstanding hospitality and service! The basic package gave us everything we needed for a fantastic day out. The fishing nets area was incredible for photography!"</p>
+                    <div class="testimonial-author">
+                        <h4>Mahesh Patil</h4>
+                        <p>Kolhapur, Maharashtra</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 8 -->
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"We booked for our wedding anniversary and got premium treatment. Saw 35 bird species in a single day! The guides' passion for birds is infectious."</p>
+                    <div class="testimonial-author">
+                        <h4>Anjali & Rohit Nair</h4>
+                        <p>Nagpur, Maharashtra</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 9 -->
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"The booking confirmation came via WhatsApp instantly - very convenient! The Premium package included everything mentioned. Best weekend trip we've had this year!"</p>
+                    <div class="testimonial-author">
+                        <h4>Deepak Singh</h4>
+                        <p>Pimpri-Chinchwad, Maharashtra</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 10 -->
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Bhigwan is a hidden gem! The village homestay experience was authentic and the home-cooked meals were delicious. Our 10-year-old learned so much about migratory birds!"</p>
+                    <div class="testimonial-author">
+                        <h4>Kavya Chatterjee</h4>
+                        <p>Pune, Maharashtra</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 11 -->
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Professional team, excellent organization, and reasonable pricing. We spotted the rare painted stork here! Will definitely return for the monsoon season visit."</p>
+                    <div class="testimonial-author">
+                        <h4>Suresh Rao</h4>
+                        <p>Belgaum, Karnataka</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 12 -->
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Exceeded our expectations! The nature walk was serene, the wildlife photography session was productive, and the sunset from the boat was magical. Highly recommended!"</p>
+                    <div class="testimonial-author">
+                        <h4>Ritu Patel</h4>
+                        <p>Ahmedabad, Gujarat</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 13 -->
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"The responsiveness of the team was amazing - all queries answered within minutes on WhatsApp! The experience was worth every paisa. Highly authentic and memorable!"</p>
+                    <div class="testimonial-author">
+                        <h4>Arjun Desai</h4>
+                        <p>Satara, Maharashtra</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 14 -->
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Perfect destination for nature enthusiasts! The guides explained bird behavior and ecology beautifully. The equipment rental was affordable and well-maintained."</p>
+                    <div class="testimonial-author">
+                        <h4>Pooja Sinha</h4>
+                        <p>Mira Road, Maharashtra</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 15 -->
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"From booking to experience, everything was seamless. The premium package's overnight stay was comfortable, and breakfast with a view of the lake was perfect!"</p>
+                    <div class="testimonial-author">
+                        <h4>Gaurav Mishra</h4>
+                        <p>Bangalore, Karnataka</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer & Contact -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Bhigwan Bird Sanctuary</h3>
+                    <p>Experience the wonder of nature with expert guides and authentic village hospitality.</p>
+                    <div class="social-links">
+                        <a href="https://wa.me/919876543210" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#packages">Packages</a></li>
+                        <li><a href="#booking">Book Now</a></li>
+                        <li><a href="#testimonials">Reviews</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Bhigwan, Indapur, Pune, Maharashtra</p>
+                    <p><i class="fas fa-phone"></i> +91 9876 543 210</p>
+                    <p><i class="fas fa-envelope"></i> info@bhigwanbirds.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Bhigwan Bird Sanctuary. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <div class="whatsapp-button">
+        <a href="https://wa.me/919876543210?text=Hello%20Bhigwan%20Birds%21%20I%20would%20like%20to%20book%20a%20visit." target="_blank" title="Chat on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

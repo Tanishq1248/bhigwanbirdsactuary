@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Utility Classes */
+.section-subtitle {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+/* Button Styles */
+.cta-button,
+.book-btn,
+.submit-btn {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.cta-button {
+  background: linear-gradient(135deg, #c97d4a 0%, #d4886d 100%);
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(201, 125, 74, 0.3);
+}
+
+.book-btn {
+  background-color: #2c5aa0;
+  color: white;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.book-btn:hover {
+  background-color: #1e3f70;
+}
+
+.book-btn.featured-btn {
+  background: linear-gradient(135deg, #c97d4a 0%, #d4886d 100%);
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, #c97d4a 0%, #d4886d 100%);
+  color: white;
+  width: 100%;
+  padding: 15px;
+  font-size: 1.1rem;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(201, 125, 74, 0.3);
+}
+
+/* Admin Access Button */
+.admin-access-btn {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: rgba(102, 126, 234, 0.8);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: 50;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.admin-access-btn:hover {
+  background: #667eea;
+  transform: scale(1.1);
+}
+
+/* Show admin button on specific gesture (Ctrl+Shift+A) */
+.admin-access-btn.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (max-width: 768px) {
+  .admin-access-btn {
+    bottom: 80px;
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+  }
+}
