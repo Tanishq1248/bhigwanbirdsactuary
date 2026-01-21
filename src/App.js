@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import './index.css';
 import { AdminProvider, useAdmin } from './context/AdminContext';
+import { Analytics } from "@vercel/analytics/react"
 // import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Gallery from './components/Gallery';
@@ -29,6 +30,7 @@ function AppContent() {
   // Default website view
   return (
     <div className="App">
+        <Analytics />
       {/* <Navbar /> */}
       <Hero />
       <Gallery />
